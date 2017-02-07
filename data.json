@@ -1,5 +1,5 @@
 {
-  "user": [{
+  "user": {
     "id": "1",
     "pin": "123456",
     "attributes": {
@@ -7,7 +7,7 @@
       "lastName": "King",
       "created": "2017-05-22T14:56:29.000Z"
     }
-  }],
+  },
   "details":{
       "fee": 2.50,
       "date": "2017-05-02"
