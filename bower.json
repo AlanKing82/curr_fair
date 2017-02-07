@@ -1,0 +1,17 @@
+{
+  "name": "curr_fair",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "Alan King"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
