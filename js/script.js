@@ -1,21 +1,25 @@
         
-
+ $(function() {
+   
         var data = {};
+        var select = $("#selectFirst, #selectSecond");
+        var input = $('#inputFirst, #inputSecond');
+        var moneyLabel = $('.money-label');
 
         $.getJSON("data.json", function(res) {
             data = res;
-        });
-
-
-        $(function() {
-
-            var select = $("#selectFirst, #selectSecond");
-            var input = $('#inputFirst, #inputSecond');
-            var moneyLabel = $('.money-label');
 
             $.each(data.currency, function(key, value) {
                 select.append('<option value=' + key + '>' + key + '</option>');
             });
+        
+
+
+       
+
+
+
+
 
             // initialize selected states
 
@@ -452,6 +456,6 @@
 
 
 
-
+        });
 
         });
