@@ -7,10 +7,9 @@
             moneyLabel = $('.money-label'),
             userPINentered = '',
             userPIN = '',
-            testPIN;
+            testPIN,
+            prevSelected;
 
-
-            
 
         $.getJSON("data.json", function(res) {
             data = res;
@@ -28,8 +27,10 @@
             $(select[0]).find('option').eq(0).attr('selected', true);
             $(select[1]).find('option').eq(2).attr('selected', true);
 
+            //initialize UI state
             updateFields(1);
 
+            // user events
             input.on('focus', function() {
                 // $('.field-box-label').removeClass('label-active');
                 $(this).parent().prev().find('.field-box-label').addClass('label-active');
@@ -49,8 +50,7 @@
                 updateFields(firstInput);
             });
 
-            var prevSelected;
-
+         
             select.on('focus', function() {
 
                 // Store the current value on focus and on change
@@ -83,8 +83,6 @@
                     $(input[0]).val($(input[1]).val());
                     $(input[1]).val(inputSwap);
 
-
-
                     // remove focus in order to re-focus on 
                     select.blur();
                 }
@@ -111,12 +109,7 @@
 
                 var rate, amountFirst, amountSecond, base, to, fee;
 
-
-
-
-
                 //swap inputs if the same selected
-
 
                 if (firstInput) {
                     base = $(select[0]).val();
@@ -153,16 +146,12 @@
 
                 }
 
-
-
-
             }
 
 
-
+            // decimal point number formatted with comma's 
              function formatCurrency(amountFirst, amountSecond, base, to) {
                 
-
                     var sym1 = data.currency[base].symbol;
                     var sym2 = data.currency[to].symbol;
 
@@ -200,7 +189,7 @@
         });
 
 
-            // PIN from json data   
+            // test PIN from json data   
             $('.test').html(testPIN);
 
             //jQuery time
@@ -225,14 +214,9 @@
                 // if not empty remove value in field
                 if (!currentDigitIsEmpty) {
 
-                    //reinstate number when moved out of focus without key event
-
-
-                    currentDigit.val('');
                     // reinstate number when moved out of focus without key event
-                    // $(".digit").blur(function(){
-                    //  currentDigit.val(currentDigit.val());
-                    // });
+                    currentDigit.val('');
+ 
                 }
 
             });
@@ -248,12 +232,6 @@
 
             });
 
-
-
-
-
-
-
             digits.keyup(function(e) {
                 e.preventDefault();
                 currentDigit = $(this);
@@ -264,17 +242,12 @@
                     currentDigitnxt = currentDigit.next('.digit');
                     // less than 6 digits
 
-
-
                     if (currentDigit.index() < (digits.length - 1)) {
                         if (currentDigitnxt.val().length === 0)
                             currentDigitnxt.focus();
                     }
                 }
             })
-
-
-
 
 
             $(".next").click(function() {
@@ -290,8 +263,6 @@
                 if (nextButton.attr('data') == 'modal') {
                     modal = 'modalInit';
                     var modalContent = $('.modalContent');
-
-
 
                     $.featherlight(modalContent, {
                         closeOnClick: false,
@@ -431,8 +402,4 @@
                 });
             });
 
-
-
-       
-
-        });
+});

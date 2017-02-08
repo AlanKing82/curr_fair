@@ -104,9 +104,6 @@ p{
   margin-left: -14px;
 } 
 
-
-
-
 button, .btn, .menu-trigger, .menu__link-btn, input, select, textarea {
     font: inherit;
     margin: 0;
@@ -153,10 +150,6 @@ img {
     padding-right: 144px;
 }
 
-
-
-
-
 .field-addon__item {
     position: absolute;
     top: 0;
@@ -182,7 +175,6 @@ img {
     -ms-flex-align: center;
     align-items: center;
 }
-
 
 .field-addon__item--before {
     left: 18px;
@@ -212,7 +204,6 @@ img {
     pointer-events: none;
 }
 
-
 .field-addon__item--not-interactive {
     pointer-events: none;
 }
@@ -235,7 +226,6 @@ label, .label {
     padding-top: 42px;
 }
 
-
 .field-boxed {
     padding-top: 42px;
 }
@@ -245,7 +235,6 @@ label, .label {
     position: relative;
 }
 
-
 .field-grouped {
     position: relative;
 }
@@ -254,7 +243,6 @@ label, .label {
 .field-grouped {
     position: relative;
 }
-
 
 
 .field-grouped--first {
@@ -319,8 +307,6 @@ label, .label {
 }
 
 
-
-
 .font-size-h4 {
     font-size: 80%;
 }
@@ -330,8 +316,6 @@ label, .label {
 .font-size-h2-lap-and-up {
     font-size: 21px !important;
 }
-
-
 
 
 @media only screen and (min-width: 541px)
@@ -350,7 +334,6 @@ label, .label {
 @media only screen and (min-width: 541px) {
   .field-masked-label--constrained--calculator {
     max-width: 228px; } }
-
 
 
 @media only screen and (min-width: 541px) {
@@ -827,8 +810,6 @@ color:#86cbeb;
 }
 
 
-
-
 .badge-note a{
   font-family: "Post Grotesk Book";
 }
@@ -847,13 +828,9 @@ color:#86cbeb;
   background-position-y:-14px;
 }
 
-
-
 .badge {
-  
     font-weight: bold;
     height: 18px;
-
     padding: 3px 6px;
     -webkit-border-radius: 12px!important;
     -moz-border-radius: 12px!important;
@@ -890,16 +867,16 @@ color:#86cbeb;
     color: #6EC0E6;
 }
 
-  .horizontal-overlap-border{
-    margin-top: -1px;
-  }
+.horizontal-overlap-border{
+  margin-top: -1px;
+}
 
-  .pull-right{float:right;}
+.pull-right{float:right;}
 
-  a {
-    text-decoration: none;
-    color: #6ec0e6;
-    cursor: pointer;
+a {
+  text-decoration: none;
+  color: #6ec0e6;
+  cursor: pointer;
 }
 
 a.inline-link{
