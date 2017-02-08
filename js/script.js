@@ -1,10 +1,16 @@
         
  $(function() {
    
-        var data = {};
-        var select = $("#selectFirst, #selectSecond");
-        var input = $('#inputFirst, #inputSecond');
-        var moneyLabel = $('.money-label');
+        var data = {},
+            select = $("#selectFirst, #selectSecond"),
+            input = $('#inputFirst, #inputSecond'),
+            moneyLabel = $('.money-label'),
+            userPINentered = '',
+            userPIN = '',
+            testPIN;
+
+
+            
 
         $.getJSON("data.json", function(res) {
             data = res;
@@ -12,14 +18,10 @@
             $.each(data.currency, function(key, value) {
                 select.append('<option value=' + key + '>' + key + '</option>');
             });
+            userPIN = data.user.pin;
+
+            testPIN = '<p style="color:red">testPIN: <span>'+ userPIN + '</span></p>';
         
-
-
-       
-
-
-
-
 
             // initialize selected states
 
@@ -27,8 +29,6 @@
             $(select[1]).find('option').eq(2).attr('selected', true);
 
             updateFields(1);
-
-
 
             input.on('focus', function() {
                 // $('.field-box-label').removeClass('label-active');
@@ -113,11 +113,7 @@
 
 
 
-                // var result = input ? 1 : 0;
 
-
-                // base = $(select[!result]).val();
-                // to = $(select[result]).val();
 
                 //swap inputs if the same selected
 
@@ -203,18 +199,6 @@
 
         });
 
-
-
-
-
-
-
-        $(function() {
-
-            var userPINentered = '';
-
-            var userPIN = data.user.pin;
-            var testPIN = '<p style="color:red">testPIN: <span>'+ userPIN + '</span></p>';
 
             // PIN from json data   
             $('.test').html(testPIN);
@@ -353,9 +337,6 @@
                             'opacity': opacity
                         });
                     },
-                    progress: function() {
-                        console.log('progress');
-                    },
                     queue: modal,
                     duration: 800,
                     complete: function() {
@@ -387,9 +368,6 @@
                         verified = userPIN == userPINentered;
 
 
-                        console.log(userPINentered);
-
-
                         if (verified) {
                             $(".verify").append('<i class="material-icons right">done</i>');
                             setTimeout(function() {
@@ -401,7 +379,6 @@
 
                         userPINentered = '';
 
-                        console.log(userPINentered + " entered");
                     });
                 });
 
@@ -456,6 +433,6 @@
 
 
 
-        });
+       
 
         });
